@@ -1,6 +1,7 @@
 package br.com.ecommerce.servlets;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,31 +33,35 @@ public class cadastrarCliente extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String login = request.getParameter("login");
-		String senha = request.getParameter("senha");
-		String nome = request.getParameter("nome");
-		String telefone = request.getParameter("telefone");
-		String email = request.getParameter("email");
-		
+		try {
+			String login = request.getParameter("login");
+			String senha = request.getParameter("senha");
+			String nome = request.getParameter("nome");
+			String telefone = request.getParameter("telefone");
+			String email = request.getParameter("email");
 
-		ClienteDao cdao = new ClienteDaoJpa();
+			ClienteDao cdao = new ClienteDaoJpa();
 
-		Cliente cliente = new Cliente();
-		cliente.setEmail(email);
-		cliente.setLogin(login);
-		cliente.setSenha(senha);
-		cliente.setNome(nome);
-		cliente.setTelefone(telefone);
+			Cliente cliente = new Cliente();
+			cliente.setEmail(email);
+			cliente.setLogin(login);
+			cliente.setSenha(senha);
+			cliente.setNome(nome);
+			cliente.setTelefone(telefone);
 
-		String mensagem = "";
+			TimeUnit.SECONDS.sleep(1);
 
-		mensagem = "Salvo com Sucesso";
-		cdao.cadastrarCliente(cliente);
+			String mensagem = "";
+			mensagem = "Salvo com Sucesso";
+			cdao.cadastrarCliente(cliente);
+			request.setAttribute("mensagem", mensagem);
+			RequestDispatcher rd = request.getRequestDispatcher("index.xhtml");
+			rd.forward(request, response);
 
-		request.setAttribute("mensagem", mensagem);
-
-		RequestDispatcher rd = request.getRequestDispatcher("cadastro.xhtml");
-		rd.forward(request, response);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 }
