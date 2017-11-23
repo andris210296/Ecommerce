@@ -9,12 +9,15 @@ public class Produto {
 	@GeneratedValue
 	private Long codigo;
 	
+	@Column(length=1000)
 	private String descricao;
+	
 	private String foto;
 	private String categoria;
+	private int destaque;
 	private String especificacao;
 	private double preco_unitario;
-	private int destaque;
+	
 	
 	
 	public Long getCodigo() {
