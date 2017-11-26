@@ -9,6 +9,7 @@
 
 	<script src="jquery/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="myScript.js"></script>
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -46,14 +47,13 @@
 							Categorias<b class="caret"></b></a>
 						<ul class="dropdown-menu" role="menu">
 
-							<li><a href="/Ecommerce/categoria.xhtml"><i
-									class="fa fa-angle-right"></i>Categoria 1</a></li>
-							<li><a href="/Ecommerce/categoria.xhtml"><i
-									class="fa fa-angle-right"></i>Categoria 1</a></li>
-							<li><a href="/Ecommerce/categoria.xhtml"><i
-									class="fa fa-angle-right"></i>Categoria 1</a></li>
-							<li><a href="/Ecommerce/categoria.xhtml"><i
-									class="fa fa-angle-right"></i>Categoria 1</a></li>
+							<ui:repeat var="item" value="#{indexJsf.categorias}"
+								varStatus="status">
+
+								<li><a href="/Ecommerce/categoria.xhtml"><i
+										class="fa fa-angle-right"></i>#{item}</a></li>
+
+							</ui:repeat>
 
 						</ul></li>
 
@@ -135,7 +135,7 @@
 					</button>
 					<h4 class="modal-title" id="myModalLabel">Cadastro realizado!</h4>
 				</div>
-				
+
 
 			</div>
 		</div>

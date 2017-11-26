@@ -51,131 +51,55 @@
 								<div class="item active">
 									<div class="row">
 
+										<ui:repeat var="item" value="#{indexJsf.destaques}"
+											varStatus="status">
+
+											<div class="col-sm-4">
+												<div class="col-item">
+													<a href="#"> <img href="#" src="fotos/#{item.foto}"
+														class="img-responsive" alt="" />
+													</a>
+													<div class="info">
+														<div class="row">
+															<div class="price col-md-6">
+																<h5>#{item.especificacao}</h5>
+																<h5 class="price-text-color">R$
+																	#{item.preco_unitario}</h5>
+															</div>
+															<div class="rating hidden-sm col-md-6">
+																<i class="price-text-color fa fa-star"></i><i
+																	class="price-text-color fa fa-star"> </i><i
+																	class="price-text-color fa fa-star"></i><i
+																	class="price-text-color fa fa-star"> </i><i
+																	class="fa fa-star"></i>
+															</div>
+														</div>
 
 
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 0</h5>
-															<h5 class="price-text-color">R$0,99</h5>
-														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
+														<a href="#" data-toggle="modal" id="maisDetalhes"
+															data-target="#product_view#{item.codigo}"
+															class="btn btn-default btn-md"> <i
+															class="fa fa-exclamation-circle"></i> Detalhes
+														</a>
+
+
+
+														<button id="Adicionar ao carrinhoButton" type="submit"
+															class="btn btn-default btn-md">
+															<span class="fa fa-shopping-cart" aria-hidden="true"></span>
+															Adicionar ao carrinho
+														</button>
+
+
+
 													</div>
-
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
 												</div>
 											</div>
-										</div>
 
 
 
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 1</h5>
-															<h5 class="price-text-color">R$3,99</h5>
-														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
-													</div>
+										</ui:repeat>
 
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
-												</div>
-											</div>
-										</div>
-
-
-
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 2</h5>
-															<h5 class="price-text-color">R$6,99</h5>
-														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
-													</div>
-
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
-												</div>
-											</div>
-										</div>
 
 
 
@@ -186,129 +110,56 @@
 
 
 
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 0</h5>
-															<h5 class="price-text-color">R$0,99</h5>
+										<ui:repeat var="item" value="#{indexJsf.destaques}"
+											varStatus="status">
+
+
+											<div class="col-sm-4">
+												<div class="col-item">
+													<a href="#"> <img href="#" src="fotos/#{item.foto}"
+														class="img-responsive" alt="" />
+													</a>
+													<div class="info">
+														<div class="row">
+															<div class="price col-md-6">
+																<h5>#{item.especificacao}</h5>
+																<h5 class="price-text-color">R$
+																	#{item.preco_unitario}</h5>
+															</div>
+															<div class="rating hidden-sm col-md-6">
+																<i class="price-text-color fa fa-star"></i><i
+																	class="price-text-color fa fa-star"> </i><i
+																	class="price-text-color fa fa-star"></i><i
+																	class="price-text-color fa fa-star"> </i><i
+																	class="fa fa-star"></i>
+															</div>
 														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
+
+
+
+
+														<a href="#" data-toggle="modal" id="maisDetalhes"
+															data-target="#product_view#{item.codigo}"
+															class="btn btn-default btn-md"> <i
+															class="fa fa-exclamation-circle"></i> Detalhes
+														</a>
+
+
+														<button id="Adicionar ao carrinhoButton" type="submit"
+															class="btn btn-default btn-md">
+															<span class="fa fa-shopping-cart" aria-hidden="true"></span>
+															Adicionar ao carrinho
+														</button>
+
+
+
 													</div>
-
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
 												</div>
 											</div>
-										</div>
 
 
 
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 1</h5>
-															<h5 class="price-text-color">R$3,99</h5>
-														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
-													</div>
-
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
-												</div>
-											</div>
-										</div>
-
-
-
-										<div class="col-sm-4">
-											<div class="col-item">
-												<a href="#"> <img href="#" src="img/ecommerce.png"
-													class="img-responsive" alt="" />
-												</a>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Produto 2</h5>
-															<h5 class="price-text-color">R$6,99</h5>
-														</div>
-														<div class="rating hidden-sm col-md-6">
-															<i class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="price-text-color fa fa-star"></i><i
-																class="price-text-color fa fa-star"> </i><i
-																class="fa fa-star"></i>
-														</div>
-													</div>
-
-													<button id="DetalhesButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="glyphicon glyphicon-exclamation-sign"
-															aria-hidden="true"></span> Detalhes
-													</button>
-
-
-
-													<button id="Adicionar ao carrinhoButton" type="submit"
-														class="btn btn-default btn-md">
-														<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-														Adicionar ao carrinho
-													</button>
-
-
-
-												</div>
-											</div>
-										</div>
+										</ui:repeat>
 
 
 
@@ -324,39 +175,118 @@
 
 
 
+
+
+
+
+
+
+
+
+
+<!-- Mais detalhes do produto -->
+
+<ui:repeat var="item" value="#{indexJsf.destaques}"
+											varStatus="status">
+
+		<div class="modal fade product_view" id="product_view#{item.codigo}">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<a href="#" data-dismiss="modal" class="class pull-right"><span
+							class="glyphicon glyphicon-remove"></span></a>
+						<h3 class="modal-title">#{item.especificacao}</h3>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-6 product_img">
+								<img
+									src="fotos/#{item.foto}"
+									class="img-responsive" />
+							</div>
+							<div class="col-md-6 product_content">
+								
+								<div class="rating">
+									<span class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> <span
+										class="glyphicon glyphicon-star"></span> (10 reviews)
+								</div>
+								<p>#{item.descricao}</p>
+								<h3 class="cost">
+									<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
+								</h3>
+								
+								<div class="space-ten"></div>
+								<div class="btn-ground">
+									<button type="button" class="btn btn-primary">
+										<span class="glyphicon glyphicon-shopping-cart"></span> Add ao Carrinho
+									</button>
+									<button type="button" class="btn btn-primary">
+										<span class="glyphicon glyphicon-heart"></span> Add a lista de desejos
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</ui:repeat>
+
+<!-- Mais detalhes do produto -->
+
+
+		
+
+
+
+
+
+
+
+
 		<div class="container xxl-padding">
 			<h2 class="text-center xxl-b-margin">Inicie suas compras
 				escolhendo uma das categorias abaixo</h2>
 			<div class="row">
+
+
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row l-b-margin">
-
-
 						<div class="col-md-4">
-							<div class="well well-white">
+							<ui:repeat var="item" value="#{indexJsf.categorias}"
+								varStatus="status">
+								<div class="well well-white">
 
-								<a href="/Ecommerce/categoria.xhtml"> <img
-									alt="R Programming" class="center-block l-b-margin img-circle "
-									height="100" src="img/carrinho.png" width="100" />
-								</a>
+									<a href="/Ecommerce/categoria.xhtml"> <img
+										alt="R Programming"
+										class="center-block l-b-margin img-circle " height="100"
+										src="img/carrinho.png" width="100" />
+									</a>
 
-								<h6 style="text-align: center; font-size: 21px">
-									<b>Tecnologia</b>
-								</h6>
-								<p class="text-space l-b-margin">Principais informações
-									sobre esta categoria</p>
-								<!--   <a class="rounded-button cta-border-button center-block m-button" href="/andris/categoria?categoria=categoria">Veja mais !</a> -->
+									<h6 style="text-align: center; font-size: 21px">
+										<b>#{item}</b>
+									</h6>
+									<p class="text-space l-b-margin">Principais informações
+										sobre esta categoria</p>
+									<a
+										class="rounded-button cta-border-button center-block m-button"
+										href="/andris/categoria?categoria=categoria">Veja mais !</a>
 
-
-
-
-							</div>
+								</div>
+							</ui:repeat>
 						</div>
 
 					</div>
 
-
 				</div>
+
+
+
+
 			</div>
 		</div>
 
