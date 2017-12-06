@@ -2,9 +2,7 @@ package br.com.ecommerce.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 
 import br.com.ecommerce.model.Produto;
 
@@ -36,5 +34,16 @@ public class ProdutoDaoJpa implements ProdutoDao {
 		List<Produto> lista = manager.createQuery("SELECT p FROM Produto p").getResultList();				
 		return lista;
 	}
+
+
+	@Override
+	public void deletarTudo() {
+		manager.getTransaction().begin();
+		Query q = (Query) manager.createQuery("delete from Produto");
+		q.executeUpdate();
+		manager.getTransaction().commit();
+		
+	}
+	
 
 }

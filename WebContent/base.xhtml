@@ -50,7 +50,7 @@
 							<ui:repeat var="item" value="#{indexJsf.categorias}"
 								varStatus="status">
 
-								<li><a href="/Ecommerce/categoria.xhtml"><i
+								<li><a href="categoriaServlet?categoria=#{item}"><i
 										class="fa fa-angle-right"></i>#{item}</a></li>
 
 							</ui:repeat>

@@ -184,62 +184,61 @@
 
 
 
-<!-- Mais detalhes do produto -->
+		<!-- Mais detalhes do produto -->
 
-<ui:repeat var="item" value="#{indexJsf.destaques}"
-											varStatus="status">
+		<ui:repeat var="item" value="#{indexJsf.destaques}" varStatus="status">
 
-		<div class="modal fade product_view" id="product_view#{item.codigo}">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<a href="#" data-dismiss="modal" class="class pull-right"><span
-							class="glyphicon glyphicon-remove"></span></a>
-						<h3 class="modal-title">#{item.especificacao}</h3>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<div class="col-md-6 product_img">
-								<img
-									src="fotos/#{item.foto}"
-									class="img-responsive" />
-							</div>
-							<div class="col-md-6 product_content">
-								
-								<div class="rating">
-									<span class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> <span
-										class="glyphicon glyphicon-star"></span> (10 reviews)
+			<div class="modal fade product_view" id="product_view#{item.codigo}">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<a href="#" data-dismiss="modal" class="class pull-right"><span
+								class="glyphicon glyphicon-remove"></span></a>
+							<h3 class="modal-title">#{item.especificacao}</h3>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-6 product_img">
+									<img src="fotos/#{item.foto}" class="img-responsive" />
 								</div>
-								<p>#{item.descricao}</p>
-								<h3 class="cost">
-									<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
-								</h3>
-								
-								<div class="space-ten"></div>
-								<div class="btn-ground">
-									<button type="button" class="btn btn-primary">
-										<span class="glyphicon glyphicon-shopping-cart"></span> Add ao Carrinho
-									</button>
-									<button type="button" class="btn btn-primary">
-										<span class="glyphicon glyphicon-heart"></span> Add a lista de desejos
-									</button>
+								<div class="col-md-6 product_content">
+
+									<div class="rating">
+										<span class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span> <span
+											class="glyphicon glyphicon-star"></span> (10 reviews)
+									</div>
+									<p>#{item.descricao}</p>
+									<h3 class="cost">
+										<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
+									</h3>
+
+									<div class="space-ten"></div>
+									<div class="btn-ground">
+										<button type="button" class="btn btn-primary">
+											<span class="glyphicon glyphicon-shopping-cart"></span> Add
+											ao Carrinho
+										</button>
+										<button type="button" class="btn btn-primary">
+											<span class="glyphicon glyphicon-heart"></span> Add a lista
+											de desejos
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-</ui:repeat>
+		</ui:repeat>
 
-<!-- Mais detalhes do produto -->
+		<!-- Mais detalhes do produto -->
 
 
-		
+
 
 
 
@@ -257,26 +256,38 @@
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row l-b-margin">
 						<div class="col-md-4">
+
 							<ui:repeat var="item" value="#{indexJsf.categorias}"
 								varStatus="status">
-								<div class="well well-white">
+								<form method="get" action="categoriaServlet">
 
-									<a href="/Ecommerce/categoria.xhtml"> <img
-										alt="R Programming"
-										class="center-block l-b-margin img-circle " height="100"
-										src="img/carrinho.png" width="100" />
-									</a>
+									<div class="well well-white">
 
-									<h6 style="text-align: center; font-size: 21px">
-										<b>#{item}</b>
-									</h6>
-									<p class="text-space l-b-margin">Principais informações
-										sobre esta categoria</p>
-									<a
-										class="rounded-button cta-border-button center-block m-button"
-										href="/andris/categoria?categoria=categoria">Veja mais !</a>
 
-								</div>
+										<input type="hidden" name="categoria" class="form-control"
+											id="" value="#{item}" /> <a
+											href="/Ecommerce/categoria.xhtml"> <img
+											alt="R Programming"
+											class="center-block l-b-margin img-circle " height="100"
+											src="img/carrinho.png" width="100" />
+										</a>
+
+										<h6 style="text-align: center; font-size: 21px">
+											<b>#{item}</b>
+										</h6>
+										<p class="text-space l-b-margin">Principais informações
+											sobre esta categoria</p>
+
+										<div class="form-group col-lg-6">
+											<button type="submit" class="btn btn-default sketchy-font">Veja
+												mais!</button>
+										</div>
+
+									</div>
+
+
+								</form>
+
 							</ui:repeat>
 						</div>
 

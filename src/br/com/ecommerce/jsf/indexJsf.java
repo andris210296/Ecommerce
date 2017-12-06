@@ -18,6 +18,8 @@ import br.com.ecommerce.model.Produto;
 
 /**
  * Servlet implementation class indexServlet
+ * 
+ * http://incepttechnologies.blogspot.com.br/p/view-parameters-in-jsf-20.html
  */
 @ManagedBean
 public class indexJsf {

@@ -20,6 +20,8 @@ public class AutoPopulate extends HttpServlet {
 		try {
 
 			ProdutoDao pdao = new ProdutoDaoJpa();
+			pdao.deletarTudo();
+			
 
 			Produto produto1 = new Produto();
 			produto1.setCategoria("Telefones e Celulares");
@@ -35,7 +37,8 @@ public class AutoPopulate extends HttpServlet {
 			produto1.setPreco_unitario(699.99);
 
 			pdao.cadastrarProduto(produto1);
-
+			
+			
 			Produto produto2 = new Produto();
 			produto2.setCategoria("Computadores e Notebooks");
 			produto2.setDescricao(
