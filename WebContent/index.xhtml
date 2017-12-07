@@ -51,54 +51,54 @@
 								<div class="item active">
 									<div class="row">
 
-										<ui:repeat var="item" value="#{indexJsf.destaques}"
-											varStatus="status">
+										<h:form id="formVenda1"> 
+										<ui:repeat var="produto" value="#{indexJsf.destaques}"
+												varStatus="status">
 
-											<div class="col-sm-4">
-												<div class="col-item">
-													<a href="#"> <img href="#" src="fotos/#{item.foto}"
-														class="img-responsive" alt="" />
-													</a>
-													<div class="info">
-														<div class="row">
-															<div class="price col-md-6">
-																<h5>#{item.especificacao}</h5>
-																<h5 class="price-text-color">R$
-																	#{item.preco_unitario}</h5>
-															</div>
-															<div class="rating hidden-sm col-md-6">
-																<i class="price-text-color fa fa-star"></i><i
-																	class="price-text-color fa fa-star"> </i><i
-																	class="price-text-color fa fa-star"></i><i
-																	class="price-text-color fa fa-star"> </i><i
-																	class="fa fa-star"></i>
-															</div>
-														</div>
-
-
-														<a href="#" data-toggle="modal" id="maisDetalhes"
-															data-target="#product_view#{item.codigo}"
-															class="btn btn-default btn-md"> <i
-															class="fa fa-exclamation-circle"></i> Detalhes
+												<div class="col-sm-4">
+													<div class="col-item">
+														<a href="#"> <img href="#" src="fotos/#{produto.foto}"
+															class="img-responsive" alt="" />
 														</a>
+														<div class="info">
+															<div class="row">
+																<div class="price col-md-6">
+																	<h5>#{produto.especificacao}</h5>
+																	<h5 class="price-text-color">R$
+																		#{produto.preco_unitario}</h5>
+																</div>
+																<div class="rating hidden-sm col-md-6">
+																	<i class="price-text-color fa fa-star"></i><i
+																		class="price-text-color fa fa-star"> </i><i
+																		class="price-text-color fa fa-star"></i><i
+																		class="price-text-color fa fa-star"> </i><i
+																		class="fa fa-star"></i>
+																</div>
+															</div>
+
+
+															<a href="#" data-toggle="modal" id="maisDetalhes"
+																data-target="#product_view#{produto.codigo}"
+																class="btn btn-default btn-md"> <i
+																class="fa fa-exclamation-circle"></i> Detalhes
+															</a>
 
 
 
-														<button id="Adicionar ao carrinhoButton" type="submit"
-															class="btn btn-default btn-md">
-															<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-															Adicionar ao carrinho
-														</button>
+															<p:commandButton value="Add ao carrinho"
+																action="#{categoriaJsf.adicionarCarrinho(produto)}" />
 
 
 
+														</div>
 													</div>
 												</div>
-											</div>
 
 
 
-										</ui:repeat>
+											</ui:repeat>
+
+										</h:form>
 
 
 
@@ -108,58 +108,56 @@
 								<div class="item">
 									<div class="row">
 
+										<h:form id="formVenda2"> 
+
+										<ui:repeat var="produto" value="#{indexJsf.destaques}"
+												varStatus="status">
 
 
-										<ui:repeat var="item" value="#{indexJsf.destaques}"
-											varStatus="status">
-
-
-											<div class="col-sm-4">
-												<div class="col-item">
-													<a href="#"> <img href="#" src="fotos/#{item.foto}"
-														class="img-responsive" alt="" />
-													</a>
-													<div class="info">
-														<div class="row">
-															<div class="price col-md-6">
-																<h5>#{item.especificacao}</h5>
-																<h5 class="price-text-color">R$
-																	#{item.preco_unitario}</h5>
-															</div>
-															<div class="rating hidden-sm col-md-6">
-																<i class="price-text-color fa fa-star"></i><i
-																	class="price-text-color fa fa-star"> </i><i
-																	class="price-text-color fa fa-star"></i><i
-																	class="price-text-color fa fa-star"> </i><i
-																	class="fa fa-star"></i>
-															</div>
-														</div>
-
-
-
-
-														<a href="#" data-toggle="modal" id="maisDetalhes"
-															data-target="#product_view#{item.codigo}"
-															class="btn btn-default btn-md"> <i
-															class="fa fa-exclamation-circle"></i> Detalhes
+												<div class="col-sm-4">
+													<div class="col-item">
+														<a href="#"> <img href="#" src="fotos/#{produto.foto}"
+															class="img-responsive" alt="" />
 														</a>
+														<div class="info">
+															<div class="row">
+																<div class="price col-md-6">
+																	<h5>#{produto.especificacao}</h5>
+																	<h5 class="price-text-color">R$
+																		#{produto.preco_unitario}</h5>
+																</div>
+																<div class="rating hidden-sm col-md-6">
+																	<i class="price-text-color fa fa-star"></i><i
+																		class="price-text-color fa fa-star"> </i><i
+																		class="price-text-color fa fa-star"></i><i
+																		class="price-text-color fa fa-star"> </i><i
+																		class="fa fa-star"></i>
+																</div>
+															</div>
 
 
-														<button id="Adicionar ao carrinhoButton" type="submit"
-															class="btn btn-default btn-md">
-															<span class="fa fa-shopping-cart" aria-hidden="true"></span>
-															Adicionar ao carrinho
-														</button>
+
+
+															<a href="#" data-toggle="modal" id="maisDetalhes"
+																data-target="#product_view#{produto.codigo}"
+																class="btn btn-default btn-md"> <i
+																class="fa fa-exclamation-circle"></i> Detalhes
+															</a>
+
+
+															<p:commandButton value="Add ao carrinho"
+																action="#{categoriaJsf.adicionarCarrinho(produto)}" />
 
 
 
+														</div>
 													</div>
 												</div>
-											</div>
 
 
 
-										</ui:repeat>
+											</ui:repeat>
+										</h:form>
 
 
 
@@ -186,55 +184,58 @@
 
 		<!-- Mais detalhes do produto -->
 
-		<ui:repeat var="item" value="#{indexJsf.destaques}" varStatus="status">
+		<h:form id="formVenda3"> 
 
-			<div class="modal fade product_view" id="product_view#{item.codigo}">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<a href="#" data-dismiss="modal" class="class pull-right"><span
-								class="glyphicon glyphicon-remove"></span></a>
-							<h3 class="modal-title">#{item.especificacao}</h3>
-						</div>
-						<div class="modal-body">
-							<div class="row">
-								<div class="col-md-6 product_img">
-									<img src="fotos/#{item.foto}" class="img-responsive" />
-								</div>
-								<div class="col-md-6 product_content">
+		<ui:repeat var="produto" value="#{indexJsf.destaques}" varStatus="status">
 
-									<div class="rating">
-										<span class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span> <span
-											class="glyphicon glyphicon-star"></span> (10 reviews)
+				<div class="modal fade product_view" id="product_view#{produto.codigo}">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<a href="#" data-dismiss="modal" class="class pull-right"><span
+									class="glyphicon glyphicon-remove"></span></a>
+								<h3 class="modal-title">#{produto.especificacao}</h3>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-6 product_img">
+										<img src="fotos/#{produto.foto}" class="img-responsive" />
 									</div>
-									<p>#{item.descricao}</p>
-									<h3 class="cost">
-										<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
-									</h3>
+									<div class="col-md-6 product_content">
 
-									<div class="space-ten"></div>
-									<div class="btn-ground">
-										<button type="button" class="btn btn-primary">
-											<span class="glyphicon glyphicon-shopping-cart"></span> Add
-											ao Carrinho
-										</button>
-										<button type="button" class="btn btn-primary">
-											<span class="glyphicon glyphicon-heart"></span> Add a lista
-											de desejos
-										</button>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span> <span
+												class="glyphicon glyphicon-star"></span> (10 reviews)
+										</div>
+										<p>#{produto.descricao}</p>
+										<h3 class="cost">
+											<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
+										</h3>
+
+										<div class="space-ten"></div>
+										<div class="btn-ground">
+
+											<p:commandButton value="Add ao carrinho"
+												action="#{categoriaJsf.adicionarCarrinho(produto)}" />
+
+											<button type="button" class="btn btn-primary">
+												<span class="glyphicon glyphicon-heart"></span> Add a lista
+												de desejos
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-		</ui:repeat>
+			</ui:repeat>
 
+		</h:form>
 		<!-- Mais detalhes do produto -->
 
 
@@ -257,7 +258,7 @@
 					<div class="row l-b-margin">
 						<div class="col-md-4">
 
-							<ui:repeat var="item" value="#{indexJsf.categorias}"
+							<ui:repeat var="categoria" value="#{indexJsf.categorias}"
 								varStatus="status">
 								<form method="get" action="categoriaServlet">
 
@@ -265,7 +266,7 @@
 
 
 										<input type="hidden" name="categoria" class="form-control"
-											id="" value="#{item}" /> <a
+											id="" value="#{categoria}" /> <a
 											href="/Ecommerce/categoria.xhtml"> <img
 											alt="R Programming"
 											class="center-block l-b-margin img-circle " height="100"
@@ -273,7 +274,7 @@
 										</a>
 
 										<h6 style="text-align: center; font-size: 21px">
-											<b>#{item}</b>
+											<b>#{categoria}</b>
 										</h6>
 										<p class="text-space l-b-margin">Principais informações
 											sobre esta categoria</p>

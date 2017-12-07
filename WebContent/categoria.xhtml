@@ -4,7 +4,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
 	
 
 <ui:composition template="base.xhtml">
@@ -57,20 +58,22 @@
 
 		<!-- Mais detalhes do produto -->
 
-		<ui:repeat var="item" value="#{categoriaJsf.produtosCategoria}" varStatus="status">
+<h:form id="formVenda"> 
 
-			<div class="modal fade product_view" id="product_view#{item.codigo}">
+		<ui:repeat var="produto" value="#{categoriaJsf.produtosCategoria}" varStatus="status">
+
+			<div class="modal fade product_view" id="product_view#{produto.codigo}">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
 							<a href="#" data-dismiss="modal" class="class pull-right"><span
 								class="glyphicon glyphicon-remove"></span></a>
-							<h3 class="modal-title">#{item.especificacao}</h3>
+							<h3 class="modal-title">#{produto.especificacao}</h3>
 						</div>
 						<div class="modal-body">
 							<div class="row">
 								<div class="col-md-6 product_img">
-									<img src="fotos/#{item.foto}" class="img-responsive" />
+									<img src="fotos/#{produto.foto}" class="img-responsive" />
 								</div>
 								<div class="col-md-6 product_content">
 
@@ -81,17 +84,26 @@
 											class="glyphicon glyphicon-star"></span> <span
 											class="glyphicon glyphicon-star"></span> (10 reviews)
 									</div>
-									<p>#{item.descricao}</p>
+									<p>#{produto.descricao}</p>
 									<h3 class="cost">
-										<span class="glyphicon glyphicon-usd"></span>#{item.preco_unitario}
+										<span class="glyphicon glyphicon-usd"></span>#{produto.preco_unitario}
 									</h3>
 
 									<div class="space-ten"></div>
 									<div class="btn-ground">
+										
+										<!-- 
 										<button type="button" class="btn btn-primary">
 											<span class="glyphicon glyphicon-shopping-cart"></span> Add
 											ao Carrinho
 										</button>
+										 -->
+																			
+										
+										<p:commandButton value="Add ao carrinho" action="#{categoriaJsf.adicionarCarrinho(produto)}"/>
+										
+																				
+										
 										<button type="button" class="btn btn-primary">
 											<span class="glyphicon glyphicon-heart"></span> Add a lista
 											de desejos
@@ -105,6 +117,8 @@
 			</div>
 
 		</ui:repeat>
+		
+		</h:form>
 
 		<!-- Mais detalhes do produto -->
 
