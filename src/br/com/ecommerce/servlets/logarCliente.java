@@ -55,10 +55,13 @@ public class logarCliente extends HttpServlet {
 			request.setAttribute("email", cliente.getEmail());
 						
 						
+			request.setAttribute("login", cliente.getLogin());
 			RequestDispatcher rd = request.getRequestDispatcher("login.xhtml");
 			rd.forward(request, response);
 			
 		}else{
+			
+			request.setAttribute("login", "Não foi possível logar!");
 			RequestDispatcher rd = request.getRequestDispatcher("login.xhtml");
 			rd.forward(request, response);
 		}

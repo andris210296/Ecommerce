@@ -54,8 +54,8 @@ public class cadastrarCliente extends HttpServlet {
 			String mensagem = "";
 			mensagem = "Salvo com Sucesso";
 			cdao.cadastrarCliente(cliente);
-			request.setAttribute("mensagem", mensagem);
-			RequestDispatcher rd = request.getRequestDispatcher("index.xhtml");
+			request.setAttribute("login", cliente.getLogin());
+			RequestDispatcher rd = request.getRequestDispatcher("login.xhtml");
 			rd.forward(request, response);
 
 		} catch (InterruptedException e) {
